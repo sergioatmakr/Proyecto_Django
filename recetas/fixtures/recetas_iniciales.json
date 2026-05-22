@@ -1,0 +1,26 @@
+[
+  {
+    "model": "recetas.receta",
+    "pk": 1,
+    "fields": {
+      "titulo": "Tarta de Queso de la Viña",
+      "descripcion": "La famosa tarta de queso horneada, con un interior súper cremoso y una superficie tostada irresistible.",
+      "ingredientes": "- 1 kg de queso crema (tipo Philadelphia)\n- 7 huevos medianos\n- 400 g de azúcar\n- 500 ml de nata líquida para montar (35% M.G.)\n- 1 cucharada sopera de harina (o maicena)",
+      "instrucciones": "1. Precalienta el horno a 200°C con calor arriba y abajo.\n2. En un bol grande, mezcla todos los ingredientes con una varilla hasta que no queden grumos.\n3. Humedece un trozo grande de papel de horno, escúrrelo y colócalo adaptándolo a un molde desmontable.\n4. Vierte la mezcla en el molde y hornea durante 40-50 minutos.\n5. Deja enfriar a temperatura ambiente antes de desmoldar.",
+      "fecha_creacion": "2026-05-22T05:00:00Z",
+      "autor": 1
+    }
+  },
+  {
+    "model": "recetas.receta",
+    "pk": 2,
+    "fields": {
+      "titulo": "Pasta Carbonara Auténtica",
+      "descripcion": "La receta tradicional romana, sin nata, hecha a base de yemas de huevo, queso pecorino y guanciale.",
+      "ingredientes": "- 400 g de espaguetis\n- 150 g de guanciale (o panceta curada)\n- 4 yemas de huevo\n- 1 huevo entero\n- 70 g de queso Pecorino Romano o Parmesano\n- Pimienta negra recién molida",
+      "instrucciones": "1. Pon a hervir una olla grande con agua y sal para cocer la pasta.\n2. Corta el guanciale en tiras finas y dóralo en una sartén sin aceite hasta que esté crujiente. Reserva la grasa sobrante.\n3. En un bol, bate las yemas y el huevo entero junto con el queso rallado y abundante pimienta negra.\n4. Escurre la pasta 'al dente' reservando un cazo del agua de cocción.\n5. Mezcla la pasta en la sartén con el guanciale templado, aparta del fuego, vierte la crema de huevo y remueve rápidamente añadiendo un poco del agua reservada para crear una salsa cremosa.",
+      "fecha_creacion": "2026-05-22T05:05:00Z",
+      "autor": 1
+    }
+  }
+]
