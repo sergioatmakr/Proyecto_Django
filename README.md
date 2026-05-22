@@ -4,6 +4,7 @@ GourmetWeb es una aplicación web desarrollada en **Python 3** utilizando el fra
 
 ---
 ### Estrructura del proyecto
+```
 Proyecto_Django/
 ├── manage.py
 ├── requirements.txt
@@ -34,6 +35,7 @@ Proyecto_Django/
 │       └── receta_confirm_delete.html  # Pantalla de confirmación de borrado
 ├── templates/                  # Plantillas de diseño globales
 │   └── base.html               # Estructura matriz con Navbar, Bootstrap y bucle de mensajes
+```
 ---
 ## 🏗️ Arquitectura y Estructura del Patrón MTV
 
