@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if object %}Editar{% else %}Nueva{% endif %} Receta{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow border-0 p-4">
+            <h2 class="fw-bold text-dark mb-4">{% if object %}Modificar Receta: {{ object.titulo }}{% else %}Añadir Nueva Receta{% endif %}</h2>
+            
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                
+                {% for field in form %}
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-secondary">{{ field.label }}</label>
+                        {{ field.errors }}
+                        <div class="form-control-container shadow-sm">
+                            <script>
+                                // Agrega de forma dinámica la clase de diseño Bootstrap
+                                document.currentScript.parentElement.innerHTML = `{% filter escapejs %}{{ field }}{% endfilter %}`.replace('name=', 'class="form-control" name=');
+                            </script>
+                        </div>
+                        {% if field.help_text %}
+                            <div class="form-text text-muted">{{ field.help_text }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success px-4 me-2">Guardar Receta</button>
+                    <a href="{% url 'recetas:lista' %}" class="btn btn-outline-secondary px-4">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

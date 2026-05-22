@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Catálogo de Recetas{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <h1 class="display-5 fw-bold">Recetario de la Comunidad</h1>
+        <p class="text-muted">Descubre y gestiona las mejores preparaciones culinarias profesionales.</p>
+    </div>
+    
+    {% for receta in recetas %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold text-dark">{{ receta.titulo }}</h5>
+                    <p class="card-text text-secondary text-truncate">{{ receta.descripcion }}</p>
+                    <div class="mt-auto">
+                        <hr class="text-muted">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Por: <strong>{{ receta.autor.username }}</strong></small>
+                            <a href="{% url 'recetas:detalle' receta.pk %}" class="btn btn-sm btn-outline-dark">Ver Receta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-warning text-center p-4">
+                <h4>No se encontraron recetas disponibles en este momento.</h4>
+                <p class="mb-0">¡Sé el primero en publicar una receta haciendo clic en "+ Nueva Receta"!</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

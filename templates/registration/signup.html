@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear una Cuenta{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-0 p-4">
+            <h2 class="fw-bold text-dark text-center mb-4">Registro de Nuevos Miembros</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-secondary">{{ field.label }}</label>
+                        {{ field.errors }}
+                        <div class="form-control-container">
+                            <script>
+                                document.currentScript.parentElement.innerHTML = `{% filter escapejs %}{{ field }}{% endfilter %}`.replace('name=', 'class="form-control" name=');
+                            </script>
+                        </div>
+                        {% if field.help_text %}
+                            <div class="form-text text-muted small">{{ field.help_text }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-success w-100 mt-3 py-2">Registrarme e Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

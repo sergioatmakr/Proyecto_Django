@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-0 p-4 text-center">
+            <h3 class="fw-bold text-danger mb-3">¿Confirmas la eliminación?</h3>
+            <p class="text-secondary mb-4">Estás a punto de borrar de forma irreversible la receta: <br><strong>"{{ object.titulo }}"</strong>.</p>
+            
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger px-4 me-2">Eliminar Definitivamente</button>
+                <a href="{% url 'recetas:detalle' object.pk %}" class="btn btn-secondary px-4">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
