@@ -3,7 +3,38 @@
 GourmetWeb es una aplicación web desarrollada en **Python 3** utilizando el framework **Django**. Este proyecto ha sido diseñado siguiendo rigurosamente el patrón arquitectónico **MTV (Modelo - Template - Vista)** 
 
 ---
-
+### Estrructura del proyecto
+Proyecto_Django/
+├── manage.py
+├── requirements.txt
+├── .gitignore
+├── db.sqlite3                  # Base de datos local (excluida en .gitignore)
+├── config/                     # Configuración global del proyecto Django
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py             # Parámetros del sistema y MESSAGE_TAGS
+│   ├── urls.py                 # Enrutador general del proyecto
+│   └── wsgi.py
+├── recetas/                    # Aplicación principal del recetario
+│   ├── __init__.py
+│   ├── admin.py                # Registro del modelo Receta para el /admin/
+│   ├── apps.py
+│   ├── models.py               # Definición del modelo Receta (Autor ForeignKey)
+│   ├── tests.py
+│   ├── urls.py                 # URLs de la app con nombres (name='lista', etc.)
+│   ├── views.py                # Vistas basadas en clases (CBVs con Mixins)
+│   ├── fixtures/               # Carga inicial de datos automáticos
+│   │   └── recetas_iniciales.json
+│   ├── migrations/             # Historial de cambios en la base de datos
+│   │   └── 0001_initial.py
+│   └── templates/recetas/      # Plantillas HTML específicas del recetario
+│       ├── receta_list.html    # Catálogo principal con tarjetas de Bootstrap
+│       ├── receta_detail.html  # Ficha expandida de la receta
+│       ├── receta_form.html    # Formulario dinámico para Crear/Editar
+│       └── receta_confirm_delete.html  # Pantalla de confirmación de borrado
+├── templates/                  # Plantillas de diseño globales
+│   └── base.html               # Estructura matriz con Navbar, Bootstrap y bucle de mensajes
+---
 ## 🏗️ Arquitectura y Estructura del Patrón MTV
 
 La aplicación divide de forma estricta sus responsabilidades en tres capas diferenciadas para garantizar la mantenibilidad y un código limpio (PEP8):
